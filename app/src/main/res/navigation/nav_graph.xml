@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/zoneFragment">
+
+    <fragment
+        android:id="@+id/zoneFragment"
+        android:name="com.example.greenlightexample.presentation.zone.ZoneFragment"
+        android:label="ZoneFragment" >
+        <action
+            android:id="@+id/action_zoneFragment_to_regionFragment"
+            app:destination="@id/regionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regionFragment"
+        android:name="com.example.greenlightexample.presentation.region.RegionFragment"
+        android:label="RegionFragment" >
+        <argument
+            android:name="selectedZone"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_regionFragment_to_areaFragment"
+            app:destination="@id/areaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/areaFragment"
+        android:name="com.example.greenlightexample.presentation.area.AreaFragment"
+        android:label="AreaFragment" >
+        <argument
+            android:name="selected_territory"
+            app:argType="string" />
+    </fragment>
+</navigation>
